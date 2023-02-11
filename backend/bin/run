@@ -1,3 +1,12 @@
+#!/bin/zsh
 . ./venv/bin/activate
+echo "Starting webshop project"
+case "$#" in
+0 )
+        port=8282
+;;
+1 )
+        port=$1
+esac
 cd app_webshop
-./manage.py runserver 8989
+./manage.py runserver $port
