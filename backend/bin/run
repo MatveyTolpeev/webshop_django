@@ -1,0 +1,3 @@
+. ./venv/bin/activate
+cd app_webshop
+./manage.py runserver 8989

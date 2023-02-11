@@ -1,0 +1,6 @@
+cd backend
+virtualenv -p python3 venv
+. ./venv/bin/activate
+python -m pip install requirements.txt
+cd app_webshop
+./manage.py migrate
