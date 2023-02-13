@@ -1,6 +1,7 @@
-from django.urls import path
-# from .views import
+from django.urls import path, include
+from .views.auth import AuthView, hello
 
-# urlpatterns = [
-#     path('', )
-# ]
+urlpatterns = [
+    path('userlogin/', AuthView.as_view()),
+    path('hello/', hello),
+]
