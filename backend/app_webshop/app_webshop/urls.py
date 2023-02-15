@@ -20,6 +20,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import routers
 from market.views.category import CategoryViewSet
+from market.views.index import index
 
 
 schema_view = get_schema_view(
@@ -41,6 +42,7 @@ router = routers.DefaultRouter()
 router.register(r'category', CategoryViewSet)
 
 urlpatterns = [
+    path('', index),
     path('admin/', admin.site.urls),
     path('v1/', include([
         path('generic/', include(router.urls)),
