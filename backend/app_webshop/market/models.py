@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.safestring import mark_safe
 # Create your models here.
 
 
@@ -31,9 +32,14 @@ class Consumer(User):
 
 class Category(models.Model):
     name = models.CharField(max_length=250, default='')
+    image = models.ImageField(upload_to='category_images', null=True, blank=True)
 
     def __str__(self):
         return str(self.name)
+
+    @property
+    def image_tag(self):
+        return mark_safe('<img src="%s" />' % self.image.url)
 
     class Meta:
         verbose_name = 'Category'

@@ -26,7 +26,7 @@ class StoreAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'image_tag']
 
 
 admin.site.register(Product, ProductAdmin)
